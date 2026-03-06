@@ -1,0 +1,11 @@
+book
+*.venv/
+.DS_Store
+**/.DS_Store
+node_modules
+**/node_modules
+__pycache__
+**/__pycache__
+index.html
+.obsidian
+**.terraform

@@ -1,0 +1,15 @@
+[book]
+authors = ["FranCalveyra"]
+language = "en"
+src = "src"
+title = "Arquitectura de Nube en GCP"
+
+[preprocessor.katex]
+renderers = ["html"]
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+renderers = ["html"]
+
+[output.html]
+additional-js = ["mermaid-init.js"]
