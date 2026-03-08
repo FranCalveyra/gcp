@@ -6,4 +6,4 @@
 
 - [Introducción a la nube](./Clase%201.md)
 # Recursos Adicionales
-- [CLI](./Cloud%20Shell)
+- [CLI](./Cloud%20Shell.md)
