@@ -6,6 +6,10 @@
 
 - [Introducción a la nube](./Clase%201.md)
 - [Recursos de cómputo](./Clase%202.md)
+
 # Recursos Adicionales
 - [CLI](./Cloud%20Shell.md)
 - [Notas extra](./Notas%20extra.md)
+
+# Labs
+- [Network Load Balancer](./labs/Network%20Load%20Balancer.md)

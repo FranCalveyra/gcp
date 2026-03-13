@@ -63,7 +63,7 @@
 
 ## Managed Instance Groups (MIGs)
 Son análogos a los grupos de Auto-Scaling de AWS. Escalás horizontalmente en función del consumo, agregando máquinas de manera automática.
-![MIGs](./images/Clase 2/managed_instance_groups.png)
+![MIGs](./images/Clase%202/managed_instance_groups.png)
 - Ante cierto $\%$ de uso de CPU o de memoria, levanto una nueva instancia.
 - Se define un mínimo y un máximo de máquinas a tener en el MIG
 
