@@ -34,6 +34,16 @@ El curso incluye 16 clases que cubren los aspectos fundamentales de GCP:
 
 ### Recursos Adicionales
 
+### Labs y prácticas
+
+- Labs documentados:
+  - [Network Load Balancer](./src/labs/Network%20Load%20Balancer.md)
+  - [Cloud Run Functions Qwik Start](./src/labs/Cloud%20Run%20Functions%20Qwik%20Start.md)
+  - [Cloud Pub Sub With Cloud Run](./src/labs/Cloud%20Pub%20Sub%20With%20Cloud%20Run.md)
+- Prácticas Terraform:
+  - [Cloud Run Functions Qwik Start](./src/examples/cloud-run/cloud-run-functions-qwik-start/README.md)
+  - [Pub/Sub with Cloud Run](./src/examples/cloud-run/pubsub-with-cloud-run/README.md)
+
 ### Estructura del repositorio
 
 ```

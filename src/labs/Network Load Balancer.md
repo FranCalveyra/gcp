@@ -8,4 +8,6 @@ Para ello, hay que seguir una serie de pasos, detallados en el subitem [Crear un
 Aparece el concepto de [Forwarding Rule](https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts), que entiendo que son las reglas de mappeo para redirigir tráfico. En el caso del lab, mappea el puerto 80 de la IP del NLB hacia la pool de instancias con el argumento `target-pool`. 
 Esta pool de instancias sería el cluster de máquinas entre el cual queremos distribuir el tráfico.
 
+Los Load Balancers no se crean como un componente _per se_, sino que son un conjunto de 2 componentes.
+
 

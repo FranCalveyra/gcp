@@ -23,7 +23,7 @@ Existen también servicios (principalmente los relacionados al **almacenamiento*
 - A cada proyecto se le asignan recursos por los que se le va a cobrar a la Billing Account
 - Una org puede tener $N$ B.A y c/u puede tener $M$ proyectos asignados, que pueden $\in$ a diferentes folders
 ## Formas de interactuar con GCP
-- **Cloud Platform**: interfaz web, que te deja hacer de todo <img src="images/GCP Logo.png" height="40" width="40">
+- **Cloud Platform**: interfaz web, que te deja hacer de todo <img src="https://skillicons.dev/icons?i=gcp" height="20" width="20" /> 
 	- Crear y asignar recursos
 	- Administrar proyectos
 	- Monitorear uso y controlar costos

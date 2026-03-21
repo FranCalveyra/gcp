@@ -1,0 +1,34 @@
+# Prácticas de infraestructura (`src/examples`)
+
+En esta carpeta vas a encontrar prácticas de infraestructura pensadas para acompañar los labs del curso, con foco en Terraform y buenas prácticas (variables reutilizables, `outputs`, estructura clara por caso de uso, etc.).
+
+## Qué incluye hoy
+
+- `cloud-run/cloud-run-functions-qwik-start/`
+  - Ejemplo Terraform basado en el lab **Cloud Run Functions Qwik Start**.
+  - Cubre APIs, Cloud Run Functions (gen2), triggers y recursos asociados.
+- `cloud-run/pubsub-with-cloud-run/`
+  - Ejemplo Terraform basado en el lab **Cloud Pub Sub With Cloud Run**.
+  - Cubre servicios Cloud Run, topic/subscription de Pub/Sub, service account e IAM.
+- `load-balancer/create-nlb/`
+  - Ejemplo Terraform para crear un Network Load Balancer.
+- `virtual-machines/create-vm/`
+  - Ejemplo Terraform para crear una VM en Compute Engine.
+
+## Cómo usar estas prácticas
+
+1. Entrá a la carpeta del ejemplo que quieras.
+2. Inicializá Terraform con `terraform init`.
+3. Definí variables (por ejemplo en `terraform.tfvars`).
+4. Revisá cambios con `terraform plan`.
+5. Aplicá con `terraform apply`.
+
+## Recomendaciones
+
+- No hardcodear `project_id`, región o nombres sensibles: usá variables.
+- Usar `terraform fmt` y, si podés, `terraform validate` antes de aplicar.
+- Si estás probando en un proyecto temporal, al terminar corré `terraform destroy`.
+
+## Carpeta remota en GitHub
+
+- [github.com/FranCalveyra/gcp/src/examples/](https://github.com/FranCalveyra/gcp/tree/main/src/examples)

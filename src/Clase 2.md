@@ -69,5 +69,5 @@ Son análogos a los grupos de Auto-Scaling de AWS. Escalás horizontalmente en f
 
 Son $N$ máquinas virtuales administradas como un conjunto, siendo todas idénticas. Ofrece:
 - **Alta disponibilidad**: nos ofrece `automatic repairs` basados en la salud de la VM y en la salud de la aplicación. Además, nos da soporte regional para el deployment de las VMs, de forma de que si falla una zona, nuestro servicio sigue funcionando. Con esta estructura podemos usar un _load balancer_ y distribuir la demanda.
-- **Escalabilidad**: ante ciertos escenarios, el sistema puede levantar instancias nuevas para responder a picos de demanda
+- **Escalabilidad automática**: ante ciertos escenarios, el sistema puede levantar instancias nuevas para responder a picos de demanda
 - **Automatic Updates**: podemos hacer `rollouts` de diferentes versiones de nuestra aplicación
