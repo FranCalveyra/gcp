@@ -12,6 +12,12 @@ En esta carpeta vas a encontrar prácticas de infraestructura pensadas para acom
   - Cubre servicios Cloud Run, topic/subscription de Pub/Sub, service account e IAM.
 - `load-balancer/create-nlb/`
   - Ejemplo Terraform para crear un Network Load Balancer.
+- `load-balancer/application-load-balancer/`
+  - Ejemplo Terraform para un Application Load Balancer con autoscaling (MIG + autoscaler).
+- `storage/buckets/`
+  - Ejemplo Terraform basado en el lab **Cloud Storage** (versioning, lifecycle y objetos de muestra).
+- `storage/cloud-sql/`
+  - Ejemplo Terraform basado en el lab **Implementing Cloud SQL** (Cloud SQL, peering privado y VMs de demo).
 - `virtual-machines/create-vm/`
   - Ejemplo Terraform para crear una VM en Compute Engine.
 
