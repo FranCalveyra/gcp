@@ -43,12 +43,18 @@ El curso incluye 16 clases que cubren los aspectos fundamentales de GCP:
   - [Cloud SQL](./src/labs/Cloud%20SQL.md)
   - [Cloud Run Functions Qwik Start](./src/labs/Cloud%20Run%20Functions%20Qwik%20Start.md)
   - [Cloud Pub Sub With Cloud Run](./src/labs/Cloud%20Pub%20Sub%20With%20Cloud%20Run.md)
+  - [Configuring VPC](./src/labs/Configuring%20VPC.md)
+  - [VPC Controlling Access](./src/labs/VPC%20Controlling%20Access.md)
+  - [Multiple VPC](./src/labs/Multiple%20VPC.md)
 - Prácticas Terraform:
   - [Application Load Balancer with Autoscaling](./src/examples/load-balancer/application-load-balancer/README.md)
   - [Cloud Storage Lab](./src/examples/storage/buckets/README.md)
   - [Cloud SQL](./src/examples/storage/cloud-sql/README.md)
   - [Cloud Run Functions Qwik Start](./src/examples/cloud-run/cloud-run-functions-qwik-start/README.md)
   - [Pub/Sub with Cloud Run](./src/examples/cloud-run/pubsub-with-cloud-run/README.md)
+  - [Configuring VPC](./src/examples/network/configuring-vpc/README.md)
+  - [VPC Controlling Access](./src/examples/network/controlling-access/README.md)
+  - [Multiple VPC Networks](./src/examples/network/multiple-vpc/README.md)
 
 ### Estructura del repositorio
 

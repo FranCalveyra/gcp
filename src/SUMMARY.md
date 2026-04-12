@@ -20,9 +20,15 @@
 - [Cloud SQL](./labs/Cloud%20SQL.md)
 - [Cloud Run Functions Qwik Start](./labs/Cloud%20Run%20Functions%20Qwik%20Start.md)
 - [Cloud Pub Sub With Cloud Run](./labs/Cloud%20Pub%20Sub%20With%20Cloud%20Run.md)
+- [Configuring VPC](./labs/Configuring%20VPC.md)
+- [VPC Controlling Access](./labs/VPC%20Controlling%20Access.md)
+- [Multiple VPC](./labs/Multiple%20VPC.md)
 
 # Ejemplos
 - [Ejemplo Terraform: Cloud Run Functions Qwik Start](./examples/README.md)
 - [Práctica Terraform: Application Load Balancer with Autoscaling](./examples/load-balancer/application-load-balancer/README.md)
 - [Práctica Terraform: Cloud Storage Lab](./examples/storage/buckets/README.md)
 - [Práctica Terraform: Cloud SQL](./examples/storage/cloud-sql/README.md)
+- [Práctica Terraform: Configuring VPC](./examples/network/configuring-vpc/README.md)
+- [Práctica Terraform: VPC Controlling Access](./examples/network/controlling-access/README.md)
+- [Práctica Terraform: Multiple VPC Networks](./examples/network/multiple-vpc/README.md)

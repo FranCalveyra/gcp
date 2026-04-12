@@ -14,6 +14,15 @@ En esta carpeta vas a encontrar prácticas de infraestructura pensadas para acom
   - Ejemplo Terraform para crear un Network Load Balancer.
 - `load-balancer/application-load-balancer/`
   - Ejemplo Terraform para un Application Load Balancer con autoscaling (MIG + autoscaler).
+- `network/configuring-vpc/`
+  - Ejemplo Terraform basado en el lab **Configuring VPC Firewalls**.
+  - Cubre VPC auto mode, VMs de demo y reglas de firewall ingress/egress.
+- `network/controlling-access/`
+  - Ejemplo Terraform basado en el lab **VPC Networks - Controlling Access**.
+  - Cubre VMs web, firewall taggeado y service account para probar permisos de red.
+- `network/multiple-vpc/`
+  - Ejemplo Terraform basado en el lab **Multiple VPC Networks**.
+  - Cubre VPCs custom/auto mode, VMs y una appliance con múltiples interfaces de red.
 - `storage/buckets/`
   - Ejemplo Terraform basado en el lab **Cloud Storage** (versioning, lifecycle y objetos de muestra).
 - `storage/cloud-sql/`

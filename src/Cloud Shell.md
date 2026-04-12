@@ -108,3 +108,36 @@ gcloud compute forwarding-rules create www-rule \
     --address network-lb-ip-1 \
     --target-pool www-pool
 ```
+
+## Definir reglas de firewall
+```bash
+gcloud compute firewall-rules create allow-ssh-clase \
+  --direction=INGRESS \
+  --priority=1000 \
+  --network=default \
+  --action=ALLOW \
+  --rules=tcp:22 \
+  --source-ranges=181.20.10.5/32 \ # solo los admins pueden conectarse por SSH desde esta IP
+  --target-tags=ssh-admin
+```
+
+```bash
+gcloud compute firewall-rules create allow-http-public \
+  --direction=INGRESS \
+  --priority=1000 \
+  --network=tu-vpc-pro \ # Esto es una red particular
+  --action=ALLOW \
+  --rules=tcp:80 \
+  --source-ranges=0.0.0.0/0 \ # permito todo el tráfico HTTP
+  --target-tags=web-frontend
+```
+
+```bash
+gcloud compute firewall-rules create block-attacker \
+  --direction=INGRESS \
+  --priority=100 \
+  --network=default \
+  --action=DENY \
+  --rules=all \
+  --source-ranges=190.0.0.0/8 # bloqueo todo el tráfico dentro de este source range
+```
