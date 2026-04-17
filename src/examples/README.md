@@ -10,6 +10,12 @@ En esta carpeta vas a encontrar prácticas de infraestructura pensadas para acom
 - `cloud-run/pubsub-with-cloud-run/`
   - Ejemplo Terraform basado en el lab **Cloud Pub Sub With Cloud Run**.
   - Cubre servicios Cloud Run, topic/subscription de Pub/Sub, service account e IAM.
+- `iam/configuring-iam-with-gcloud/`
+  - Ejemplo Terraform basado en el lab **Configuring IAM Permissions with gcloud**.
+  - Cubre rol custom, bindings IAM para un segundo usuario, service account y una VM con identidad adjunta.
+- `iam/exploring-iam/`
+  - Ejemplo Terraform basado en el lab **Exploring IAM**.
+  - Cubre bucket de prueba, grants IAM acotados, service account y VM `demoiam`.
 - `load-balancer/create-nlb/`
   - Ejemplo Terraform para crear un Network Load Balancer.
 - `load-balancer/application-load-balancer/`
