@@ -48,6 +48,9 @@ El curso incluye 16 clases que cubren los aspectos fundamentales de GCP:
   - [Configuring VPC](./src/labs/Configuring%20VPC.md)
   - [VPC Controlling Access](./src/labs/VPC%20Controlling%20Access.md)
   - [Multiple VPC](./src/labs/Multiple%20VPC.md)
+  - [Build a Secure Network - Challenge](./src/labs/Build%20a%20Secure%20Network%20-%20Challenge.md)
+  - [Automating Infrastructure Deployment With Terraform](./src/labs/Automating%20Infrastructure%20Deployment%20With%20Terraform.md)
+  - [Build IaC with Terraform](./src/labs/Build%20IaC%20with%20Terraform.md)
 - Prácticas Terraform:
   - [Application Load Balancer with Autoscaling](./src/examples/load-balancer/application-load-balancer/README.md)
   - [Cloud Storage Lab](./src/examples/storage/buckets/README.md)
@@ -59,6 +62,9 @@ El curso incluye 16 clases que cubren los aspectos fundamentales de GCP:
   - [Configuring VPC](./src/examples/network/configuring-vpc/README.md)
   - [VPC Controlling Access](./src/examples/network/controlling-access/README.md)
   - [Multiple VPC Networks](./src/examples/network/multiple-vpc/README.md)
+  - [Build a Secure Network - Challenge](./src/examples/network/build-secure-network-challenge/README.md)
+  - [Automating Infrastructure Deployment With Terraform](./src/examples/terraform/automating-infrastructure-deployment/README.md)
+  - [Build IaC with Terraform](./src/examples/terraform/build-iac-with-terraform/README.md)
 
 ### Estructura del repositorio
 

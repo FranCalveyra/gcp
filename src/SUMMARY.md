@@ -10,6 +10,7 @@
 - [Almacenamiento](./Clase%204.md)
 - [VPC](./Clase%205.md)
 - [IAM](./Clase%206.md)
+- [Terraform](./Clase%207.md)
 
 # Recursos Adicionales
 - [CLI](./Cloud%20Shell.md)
@@ -27,6 +28,9 @@
 - [Configuring VPC](./labs/Configuring%20VPC.md)
 - [VPC Controlling Access](./labs/VPC%20Controlling%20Access.md)
 - [Multiple VPC](./labs/Multiple%20VPC.md)
+- [Build IaC with Terraform](./labs/Build%20IaC%20with%20Terraform.md)
+- [Build a Secure Network - Challenge](./labs/Build%20a%20Secure%20Network%20-%20Challenge.md)
+- [Automating Infrastructure Deployment With Terraform](./labs/Automating%20Infrastructure%20Deployment%20With%20Terraform.md)
 
 # Ejemplos
 - [Ejemplo Terraform: Cloud Run Functions Qwik Start](./examples/README.md)
@@ -38,3 +42,6 @@
 - [Práctica Terraform: Configuring VPC](./examples/network/configuring-vpc/README.md)
 - [Práctica Terraform: VPC Controlling Access](./examples/network/controlling-access/README.md)
 - [Práctica Terraform: Multiple VPC Networks](./examples/network/multiple-vpc/README.md)
+- [Práctica Terraform: Build IaC with Terraform](./examples/terraform/build-iac-with-terraform/README.md)
+- [Práctica Terraform: Build a Secure Network - Challenge](./examples/network/build-secure-network-challenge/README.md)
+- [Práctica Terraform: Automating Infrastructure Deployment With Terraform](./examples/terraform/automating-infrastructure-deployment/README.md)

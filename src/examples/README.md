@@ -29,12 +29,21 @@ En esta carpeta vas a encontrar prácticas de infraestructura pensadas para acom
 - `network/multiple-vpc/`
   - Ejemplo Terraform basado en el lab **Multiple VPC Networks**.
   - Cubre VPCs custom/auto mode, VMs y una appliance con múltiples interfaces de red.
+- `network/build-secure-network-challenge/`
+  - Ejemplo Terraform basado en el lab **Build a Secure Network - Challenge**.
+  - Cubre bastion sin IP pública vía IAP, `juice-shop` con HTTP, y reglas de firewall restrictivas por tags/subred.
 - `storage/buckets/`
   - Ejemplo Terraform basado en el lab **Cloud Storage** (versioning, lifecycle y objetos de muestra).
 - `storage/cloud-sql/`
   - Ejemplo Terraform basado en el lab **Implementing Cloud SQL** (Cloud SQL, peering privado y VMs de demo).
+- `terraform/automating-infrastructure-deployment/`
+  - Ejemplo Terraform basado en el lab **Automating the Deployment of Infrastructure Using Terraform**.
+  - Cubre VPC auto mode, firewall ICMP/SSH/HTTP/RDP y dos VM instances en zonas distintas.
 - `virtual-machines/create-vm/`
   - Ejemplo Terraform para crear una VM en Compute Engine.
+- `terraform/build-iac-with-terraform/`
+  - Ejemplo Terraform basado en el lab **Build IaC with Terraform**.
+  - Cubre import de Compute Engine, bucket para estado remoto, VPC con módulo del registry y firewall.
 
 ## Cómo usar estas prácticas
 
