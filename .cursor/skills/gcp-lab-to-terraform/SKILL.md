@@ -10,7 +10,7 @@ description: Extrae comandos ejecutados desde labs de Google Skills/Cloud Skills
 Para generar un prompt listo para pegar en el chat del agente:
 
 ```bash
-./scripts/run-gcp-lab-to-terraform.sh "<lab_1_url>" "<lab_1_markdown>" "<lab_2_url>" "<lab_2_markdown>"
+./scripts/run-gcp-lab-to-terraform.sh "<lab_1_url>" "<lab_1_example_dir>" "<lab_2_url>" "<lab_2_example_dir>"
 ```
 
 Ejemplo:
@@ -18,9 +18,9 @@ Ejemplo:
 ```bash
 ./scripts/run-gcp-lab-to-terraform.sh \
   "https://www.skills.google/focuses/49757?..." \
-  "src/labs/Cloud Run Functions Qwik Start.md" \
+  "src/examples/cloud-run/cloud-run-functions-qwik-start" \
   "https://www.skills.google/paths/12/course_templates/559/labs/564964" \
-  "src/labs/Cloud Pub Sub With Cloud Run.md"
+  "src/examples/cloud-run/pubsub-with-cloud-run"
 ```
 
 El script imprime el prompt y lo copia al clipboard en macOS (`pbcopy`) si esta disponible.
@@ -45,8 +45,9 @@ Estandarizar un flujo repetible para:
 ## Inputs esperados
 
 - URL(s) del/los lab(s).
-- Archivos markdown destino para cada lab (por ejemplo `src/labs/*.md`).
-- Directorio destino de ejemplos (por ejemplo `src/examples/cloud-run/`).
+- Directorio destino **por lab** (carpeta del ejemplo), por ejemplo `src/examples/cloud-run/pubsub-with-cloud-run`.
+
+Regla: **no se requiere que exista un `lab.md` previo**. El agente debe crear `lab.md` dentro de cada carpeta indicada.
 
 ## Workflow
 
@@ -85,7 +86,7 @@ Progreso:
 
 ## 2) Actualizar markdowns de labs
 
-En cada archivo de lab, usar esta estructura minima:
+En cada carpeta de ejemplo indicada por el usuario, crear/actualizar `lab.md` con esta estructura minima:
 
 ```markdown
 [Link al lab](...)
@@ -157,8 +158,8 @@ Archivos minimos por practica:
 Actualizar:
 
 - `src/SUMMARY.md`:
-  - agregar labs en `# Labs`
-  - agregar practicas en `# Practicas` (o seccion equivalente)
+  - agregar labs en `# Labs` apuntando a `./examples/**/<lab-slug>/lab.md`
+  - agregar practicas en `# Ejemplos` (o seccion equivalente) apuntando a `./examples/**/<lab-slug>/README.md`
 - `README.md` (raiz):
   - agregar seccion corta de labs y practicas con links.
 

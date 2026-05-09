@@ -44,6 +44,15 @@ En esta carpeta vas a encontrar prácticas de infraestructura pensadas para acom
 - `terraform/build-iac-with-terraform/`
   - Ejemplo Terraform basado en el lab **Build IaC with Terraform**.
   - Cubre import de Compute Engine, bucket para estado remoto, VPC con módulo del registry y firewall.
+- `monitoring-and-alerts/alerting-in-gcp/`
+  - Ejemplo Terraform basado en el lab **Alerting in Google Cloud**.
+  - Cubre App Engine application y un alert policy de Cloud Monitoring (latencia 99th percentile) con notification channel opcional.
+- `monitoring-and-alerts/service-monitoring/`
+  - Ejemplo Terraform basado en el lab **Service Monitoring**.
+  - Cubre App Engine application, un SLO de disponibilidad (rolling window) para el servicio `default` y un alert policy por burn rate del error budget (notification channel opcional).
+- `monitoring-and-alerts/log-analytics/`
+  - Ejemplo Terraform basado en el lab **Log Analytics on Google Cloud (GSP1088)**.
+  - Cubre GKE, log bucket con Log Analytics habilitado, linked dataset en BigQuery y log sink para enrutar logs `k8s_container`.
 
 ## Cómo usar estas prácticas
 

@@ -17,13 +17,34 @@ Este repositorio contiene el material completo del curso **GCP + AI Fundamentals
 
 El curso incluye 16 clases que cubren los aspectos fundamentales de GCP:
 
-- **Clase 1**: Introducción a la computación en la nube y AWS
-- **Clase 2**: 
-- **Clase 3**: 
-- **Clase 4**: 
-- **Clase 5**: 
-- **Clase 6**: 
-- **Clase 7**: 
+- **Clase 1**: [Introducción](./src/Clase%201.md)
+  - Regiones vs zonas, PoPs y latencia/costos
+  - Organización, folders, proyectos y billing accounts
+  - Formas de interactuar con GCP (Console, Cloud Shell, SDK, APIs)
+- **Clase 2**: [Recursos de cómputo (Compute Engine y MIGs)](./src/Clase%202.md)
+  - Familias/series/tipos de máquinas; arquitectura (Intel/AMD/ARM) y variantes (local SSD)
+  - Modelos de aprovisionamiento (standard/spot/flex-start/reservations)
+  - Managed Instance Groups: alta disponibilidad, autoscaling y rolling updates
+- **Clase 3**: [Serverless: App Engine, Cloud Run Functions y Cloud Run Service](./src/Clase%203.md)
+  - Limitaciones de VMs/MIGs (tiempos de provisioning, init/stabilization, infra ociosa)
+  - FaaS vs containers: eventos, concurrencia, límites y tiempos de arranque
+  - Modelos de billing en Cloud Run (request-based vs instance-based)
+- **Clase 4**: [Almacenamiento: GCS, Cloud SQL y Firestore](./src/Clase%204.md)
+  - Cloud Storage (object storage): durabilidad, replicación, clases de storage y pricing
+  - Cloud SQL: HA, backups, parches/updates y réplicas de lectura
+  - Firestore: modelo documento, índices, costos read/write y sharding (splits)
+- **Clase 5**: [Networking: VPC, subredes, CIDR y firewall](./src/Clase%205.md)
+  - CIDR y planificación de rangos IP; conceptos base (NIC, IPv4, RFC1918)
+  - VPC global vs subred regional; auto-mode vs custom-mode
+  - Firewall rules por VPC/tags; deny by default y costos de networking (IPs, LB, NAT, tráfico)
+- **Clase 6**: [Seguridad: IAM, jerarquía de recursos y guardrails](./src/Clase%206.md)
+  - Jerarquía (org/folders/projects/resources), herencia y ciclo de vida
+  - Member + Role + Resource; roles primitivos/predefinidos/custom
+  - Service Accounts (tipos, autenticación) y Organization Policies (constraints)
+- **Clase 7**: [Terraform e Infrastructure as Code](./src/Clase%207.md)
+  - Motivación y problemas de “clickops”; CloudFormation vs Terraform
+  - Terraform CLI (`init/plan/apply/destroy`) y lectura segura del plan
+  - State, drift, state remoto/locking y buenas prácticas
 - **Clase 8**: 
 - **Clase 9**: 
 - **Clase 10**: 
@@ -37,20 +58,23 @@ El curso incluye 16 clases que cubren los aspectos fundamentales de GCP:
 ### Labs y prácticas
 
 - Labs documentados:
-  - [Network Load Balancer](./src/labs/Network%20Load%20Balancer.md)
-  - [Application Load Balancer with Autoscaling](./src/labs/Application%20Load%20Balancer%20with%20Autoscaling.md)
-  - [Cloud Storage](./src/labs/Cloud%20Storage.md)
-  - [Cloud SQL](./src/labs/Cloud%20SQL.md)
-  - [Cloud Run Functions Qwik Start](./src/labs/Cloud%20Run%20Functions%20Qwik%20Start.md)
-  - [Cloud Pub Sub With Cloud Run](./src/labs/Cloud%20Pub%20Sub%20With%20Cloud%20Run.md)
-  - [Configuring IAM with gcloud](./src/labs/Configuring%20IAM%20with%20gcloud.md)
-  - [Exploring IAM](./src/labs/Exploring%20IAM.md)
-  - [Configuring VPC](./src/labs/Configuring%20VPC.md)
-  - [VPC Controlling Access](./src/labs/VPC%20Controlling%20Access.md)
-  - [Multiple VPC](./src/labs/Multiple%20VPC.md)
-  - [Build a Secure Network - Challenge](./src/labs/Build%20a%20Secure%20Network%20-%20Challenge.md)
-  - [Automating Infrastructure Deployment With Terraform](./src/labs/Automating%20Infrastructure%20Deployment%20With%20Terraform.md)
-  - [Build IaC with Terraform](./src/labs/Build%20IaC%20with%20Terraform.md)
+  - [Network Load Balancer](./src/examples/load-balancer/create-nlb/lab.md)
+  - [Application Load Balancer with Autoscaling](./src/examples/load-balancer/application-load-balancer/lab.md)
+  - [Cloud Storage](./src/examples/storage/buckets/lab.md)
+  - [Cloud SQL](./src/examples/storage/cloud-sql/lab.md)
+  - [Cloud Run Functions Qwik Start](./src/examples/cloud-run/cloud-run-functions-qwik-start/lab.md)
+  - [Cloud Pub Sub With Cloud Run](./src/examples/cloud-run/pubsub-with-cloud-run/lab.md)
+  - [Configuring IAM with gcloud](./src/examples/iam/configuring-iam-with-gcloud/lab.md)
+  - [Exploring IAM](./src/examples/iam/exploring-iam/lab.md)
+  - [Configuring VPC](./src/examples/network/configuring-vpc/lab.md)
+  - [VPC Controlling Access](./src/examples/network/controlling-access/lab.md)
+  - [Multiple VPC](./src/examples/network/multiple-vpc/lab.md)
+  - [Build a Secure Network - Challenge](./src/examples/network/build-secure-network-challenge/lab.md)
+  - [Automating Infrastructure Deployment With Terraform](./src/examples/terraform/automating-infrastructure-deployment/lab.md)
+  - [Build IaC with Terraform](./src/examples/terraform/build-iac-with-terraform/lab.md)
+  - [Log Analytics](./src/labs/Log Analytics.md)
+  - [Service Monitoring](./src/labs/Service Monitoring.md)
+  - [Alerting in GCP](./src/labs/Alerting in GCP.md)
 - Prácticas Terraform:
   - [Application Load Balancer with Autoscaling](./src/examples/load-balancer/application-load-balancer/README.md)
   - [Cloud Storage Lab](./src/examples/storage/buckets/README.md)
@@ -65,6 +89,9 @@ El curso incluye 16 clases que cubren los aspectos fundamentales de GCP:
   - [Build a Secure Network - Challenge](./src/examples/network/build-secure-network-challenge/README.md)
   - [Automating Infrastructure Deployment With Terraform](./src/examples/terraform/automating-infrastructure-deployment/README.md)
   - [Build IaC with Terraform](./src/examples/terraform/build-iac-with-terraform/README.md)
+  - [Alerting in GCP](./src/examples/monitoring-and-alerts/alerting-in-gcp/README.md)
+  - [Service Monitoring](./src/examples/monitoring-and-alerts/service-monitoring/README.md)
+  - [Log Analytics](./src/examples/monitoring-and-alerts/log-analytics/README.md)
 
 ### Estructura del repositorio
 

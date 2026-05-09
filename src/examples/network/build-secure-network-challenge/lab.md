@@ -1,5 +1,4 @@
 [Link al lab](https://www.skills.google/paths/12/course_templates/654/labs/592556)
-
 Fuente pública utilizada para extraer comandos (por requerir login): [Build and Secure Networks in Google Cloud: Challenge Lab (DEV Community)](https://dev.to/sandeepk27/build-and-secure-networks-in-google-cloud-challenge-lab-5g38).
 
 ## Recursos identificados

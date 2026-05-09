@@ -196,7 +196,7 @@ gsutil lifecycle set life.json gs://$BUCKET_NAME_1
 ### Verificar lifecycle policy aplicada
 Se usa para confirmar que la policy quedó activa.
 ```bash
-gsutil lifecycle get gs://$BUCKET_NAME_1
+gsutil lifecycle get life.json gs://$BUCKET_NAME_1
 ```
 
 ### Consultar estado de versioning
