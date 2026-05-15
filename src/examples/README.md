@@ -29,6 +29,9 @@ En esta carpeta vas a encontrar prácticas de infraestructura pensadas para acom
 - `network/multiple-vpc/`
   - Ejemplo Terraform basado en el lab **Multiple VPC Networks**.
   - Cubre VPCs custom/auto mode, VMs y una appliance con múltiples interfaces de red.
+- `network/vpc-flow-logs/`
+  - Ejemplo Terraform basado en el lab **Analyzing Network Traffic with VPC Flow Logs**.
+  - Cubre VPC custom con Flow Logs, firewall, VM Apache, log sink a BigQuery y permisos IAM del sink.
 - `network/build-secure-network-challenge/`
   - Ejemplo Terraform basado en el lab **Build a Secure Network - Challenge**.
   - Cubre bastion sin IP pública vía IAP, `juice-shop` con HTTP, y reglas de firewall restrictivas por tags/subred.
@@ -44,6 +47,12 @@ En esta carpeta vas a encontrar prácticas de infraestructura pensadas para acom
 - `terraform/build-iac-with-terraform/`
   - Ejemplo Terraform basado en el lab **Build IaC with Terraform**.
   - Cubre import de Compute Engine, bucket para estado remoto, VPC con módulo del registry y firewall.
+- `observability/ops-agent-monitoring/`
+  - Ejemplo Terraform basado en el lab **Monitoring a Compute Engine by using Ops Agent**.
+  - Cubre VM con Apache + Ops Agent preconfigurado vía startup script, firewall HTTP, canal de notificación y alerting policy opcionales.
+- `observability/cloud-trace/`
+  - Ejemplo Terraform basado en el lab **View application latency with Cloud Trace**.
+  - Cubre cluster GKE con scopes para Cloud Trace; la app demo Python + OpenTelemetry se despliega con el script oficial.
 - `monitoring-and-alerts/alerting-in-gcp/`
   - Ejemplo Terraform basado en el lab **Alerting in Google Cloud**.
   - Cubre App Engine application y un alert policy de Cloud Monitoring (latencia 99th percentile) con notification channel opcional.

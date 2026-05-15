@@ -44,7 +44,7 @@ Para trazar una request, se usa un Trace ID y va enchufando el identificador del
 
 El span es acumulativo, se va stackeando, lo que me permite justamente trackear donde estan las latencias y/o errores.
 
-Te lo da en un tráfico re piola.
+Te lo da en un gráfico re piola.
 
 Este me deja ver dónde está la latencia
 

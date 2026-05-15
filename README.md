@@ -1,157 +1,123 @@
-# Google Cloud Platform + AI Fundamentals - Universidad Austral
+# Arquitectura de Nube en GCP — Universidad Austral
 
-> Material completo del curso de GCP + AI Fundamentals, Universidad Austral, año 2026
+> Material del curso **GCP + AI Fundamentals** de la Universidad Austral, año 2026.
 
-## Sobre este repositorio
+Este repositorio reúne apuntes de clase, laboratorios guiados y prácticas Terraform para estudiar servicios de Google Cloud con foco en arquitectura, fundamentos operativos e infraestructura como código.
 
-Este repositorio contiene el material completo del curso **GCP + AI Fundamentals** de la Universidad Austral, cursado durante el año 2026. El contenido está organizado en formato de libro digital utilizando [mdBook](https://rust-lang.github.io/mdBook/), facilitando el estudio y la comprensión de los servicios y arquitecturas de Google Cloud Platform, y los servicios de AI que ofrece.
+La secuencia importante es esta: **concepto → lab → Terraform**. No al revés. Si arrancás copiando infraestructura sin entender qué problema resuelve el servicio, estás construyendo sobre arena.
+
+## Ruta rápida
+
+| Quiero... | Ir a |
+|---|---|
+| Leer el libro desde el índice fuente | [`src/SUMMARY.md`](./src/SUMMARY.md) |
+| Empezar por la introducción del libro | [`src/README.md`](./src/README.md) |
+| Ver las prácticas Terraform | [`src/examples/README.md`](./src/examples/README.md) |
+| Configurar el entorno local | [`docs/INSTALL.md`](./docs/INSTALL.md) |
 
 ## Criterios de evaluación
-- Para aprobar la materia es necesario tener todos los laboratorios aprobados.
-	- Algunos van a servir como checkpoint
-- Parcial teórico multiple choice al final de la materia
-- Es promocionable si te sacas 7 o más
-## Contenido
 
-### Clases Teórico-Prácticas
+- Para aprobar la materia hay que tener todos los laboratorios aprobados.
+- Algunos laboratorios funcionan como checkpoint.
+- Hay un parcial teórico multiple choice al final de la materia.
+- La materia es promocionable con nota **7 o más**.
 
-El curso incluye 16 clases que cubren los aspectos fundamentales de GCP:
+## Cómo estudiar este material
 
-- **Clase 1**: [Introducción](./src/Clase%201.md)
-  - Regiones vs zonas, PoPs y latencia/costos
-  - Organización, folders, proyectos y billing accounts
-  - Formas de interactuar con GCP (Console, Cloud Shell, SDK, APIs)
-- **Clase 2**: [Recursos de cómputo (Compute Engine y MIGs)](./src/Clase%202.md)
-  - Familias/series/tipos de máquinas; arquitectura (Intel/AMD/ARM) y variantes (local SSD)
-  - Modelos de aprovisionamiento (standard/spot/flex-start/reservations)
-  - Managed Instance Groups: alta disponibilidad, autoscaling y rolling updates
-- **Clase 3**: [Serverless: App Engine, Cloud Run Functions y Cloud Run Service](./src/Clase%203.md)
-  - Limitaciones de VMs/MIGs (tiempos de provisioning, init/stabilization, infra ociosa)
-  - FaaS vs containers: eventos, concurrencia, límites y tiempos de arranque
-  - Modelos de billing en Cloud Run (request-based vs instance-based)
-- **Clase 4**: [Almacenamiento: GCS, Cloud SQL y Firestore](./src/Clase%204.md)
-  - Cloud Storage (object storage): durabilidad, replicación, clases de storage y pricing
-  - Cloud SQL: HA, backups, parches/updates y réplicas de lectura
-  - Firestore: modelo documento, índices, costos read/write y sharding (splits)
-- **Clase 5**: [Networking: VPC, subredes, CIDR y firewall](./src/Clase%205.md)
-  - CIDR y planificación de rangos IP; conceptos base (NIC, IPv4, RFC1918)
-  - VPC global vs subred regional; auto-mode vs custom-mode
-  - Firewall rules por VPC/tags; deny by default y costos de networking (IPs, LB, NAT, tráfico)
-- **Clase 6**: [Seguridad: IAM, jerarquía de recursos y guardrails](./src/Clase%206.md)
-  - Jerarquía (org/folders/projects/resources), herencia y ciclo de vida
-  - Member + Role + Resource; roles primitivos/predefinidos/custom
-  - Service Accounts (tipos, autenticación) y Organization Policies (constraints)
-- **Clase 7**: [Terraform e Infrastructure as Code](./src/Clase%207.md)
-  - Motivación y problemas de “clickops”; CloudFormation vs Terraform
-  - Terraform CLI (`init/plan/apply/destroy`) y lectura segura del plan
-  - State, drift, state remoto/locking y buenas prácticas
-- **Clase 8**: 
-- **Clase 9**: 
-- **Clase 10**: 
-- **Clase 11**: 
-- **Clase 12**:
-- **Clase 13**:
-- **Clase 14**:
+1. Leé la clase correspondiente y entendé el modelo mental del servicio.
+2. Hacé el lab para ver el comportamiento real en Google Cloud.
+3. Recién después revisá la práctica Terraform para ver cómo se modela como infraestructura.
+4. Si algo falla, explicá primero **qué recurso esperabas crear** y **qué estado real quedó en GCP**. Ese músculo vale más que memorizar comandos.
 
-### Recursos Adicionales
+## Contenido del curso
 
-### Labs y prácticas
+| Clase | Tema | Archivo |
+|---|---|---|
+| 1 | Introducción a la nube, regiones, zonas, billing e interacción con GCP | [`Clase 1.md`](./src/Clase%201.md) |
+| 2 | Recursos de cómputo, Compute Engine y Managed Instance Groups | [`Clase 2.md`](./src/Clase%202.md) |
+| 3 | Serverless: App Engine, Cloud Run Functions y Cloud Run Service | [`Clase 3.md`](./src/Clase%203.md) |
+| 4 | Almacenamiento: Cloud Storage, Cloud SQL y Firestore | [`Clase 4.md`](./src/Clase%204.md) |
+| 5 | Networking: VPC, subredes, CIDR, firewall y costos de red | [`Clase 5.md`](./src/Clase%205.md) |
+| 6 | IAM, jerarquía de recursos, roles, service accounts y guardrails | [`Clase 6.md`](./src/Clase%206.md) |
+| 7 | Terraform e Infrastructure as Code | [`Clase 7.md`](./src/Clase%207.md) |
+| 8 | Monitoreo, logging, tracing, profiling y alertas | [`Clase 8.md`](./src/Clase%208.md) |
+| 9 | Observabilidad, Ops Agent, OpenTelemetry y monitoreo de red | [`Clase 9.md`](./src/Clase%209.md) |
 
-- Labs documentados:
-  - [Network Load Balancer](./src/examples/load-balancer/create-nlb/lab.md)
-  - [Application Load Balancer with Autoscaling](./src/examples/load-balancer/application-load-balancer/lab.md)
-  - [Cloud Storage](./src/examples/storage/buckets/lab.md)
-  - [Cloud SQL](./src/examples/storage/cloud-sql/lab.md)
-  - [Cloud Run Functions Qwik Start](./src/examples/cloud-run/cloud-run-functions-qwik-start/lab.md)
-  - [Cloud Pub Sub With Cloud Run](./src/examples/cloud-run/pubsub-with-cloud-run/lab.md)
-  - [Configuring IAM with gcloud](./src/examples/iam/configuring-iam-with-gcloud/lab.md)
-  - [Exploring IAM](./src/examples/iam/exploring-iam/lab.md)
-  - [Configuring VPC](./src/examples/network/configuring-vpc/lab.md)
-  - [VPC Controlling Access](./src/examples/network/controlling-access/lab.md)
-  - [Multiple VPC](./src/examples/network/multiple-vpc/lab.md)
-  - [Build a Secure Network - Challenge](./src/examples/network/build-secure-network-challenge/lab.md)
-  - [Automating Infrastructure Deployment With Terraform](./src/examples/terraform/automating-infrastructure-deployment/lab.md)
-  - [Build IaC with Terraform](./src/examples/terraform/build-iac-with-terraform/lab.md)
-  - [Log Analytics](./src/labs/Log Analytics.md)
-  - [Service Monitoring](./src/labs/Service Monitoring.md)
-  - [Alerting in GCP](./src/labs/Alerting in GCP.md)
-- Prácticas Terraform:
-  - [Application Load Balancer with Autoscaling](./src/examples/load-balancer/application-load-balancer/README.md)
-  - [Cloud Storage Lab](./src/examples/storage/buckets/README.md)
-  - [Cloud SQL](./src/examples/storage/cloud-sql/README.md)
-  - [Cloud Run Functions Qwik Start](./src/examples/cloud-run/cloud-run-functions-qwik-start/README.md)
-  - [Pub/Sub with Cloud Run](./src/examples/cloud-run/pubsub-with-cloud-run/README.md)
-  - [Configuring IAM with gcloud](./src/examples/iam/configuring-iam-with-gcloud/README.md)
-  - [Exploring IAM](./src/examples/iam/exploring-iam/README.md)
-  - [Configuring VPC](./src/examples/network/configuring-vpc/README.md)
-  - [VPC Controlling Access](./src/examples/network/controlling-access/README.md)
-  - [Multiple VPC Networks](./src/examples/network/multiple-vpc/README.md)
-  - [Build a Secure Network - Challenge](./src/examples/network/build-secure-network-challenge/README.md)
-  - [Automating Infrastructure Deployment With Terraform](./src/examples/terraform/automating-infrastructure-deployment/README.md)
-  - [Build IaC with Terraform](./src/examples/terraform/build-iac-with-terraform/README.md)
-  - [Alerting in GCP](./src/examples/monitoring-and-alerts/alerting-in-gcp/README.md)
-  - [Service Monitoring](./src/examples/monitoring-and-alerts/service-monitoring/README.md)
-  - [Log Analytics](./src/examples/monitoring-and-alerts/log-analytics/README.md)
+## Labs documentados
 
-### Estructura del repositorio
+| Tipo de recurso | Labs |
+|---|---|
+| Balanceadores de carga | [Network Load Balancer](./src/examples/load-balancer/create-nlb/lab.md), [Application Load Balancer with Autoscaling](./src/examples/load-balancer/application-load-balancer/lab.md) |
+| Almacenamiento | [Cloud Storage](./src/examples/storage/buckets/lab.md), [Cloud SQL](./src/examples/storage/cloud-sql/lab.md) |
+| Cloud Run | [Cloud Run Functions Qwik Start](./src/examples/cloud-run/cloud-run-functions-qwik-start/lab.md), [Cloud Pub/Sub With Cloud Run](./src/examples/cloud-run/pubsub-with-cloud-run/lab.md) |
+| IAM | [Configuring IAM with gcloud](./src/examples/iam/configuring-iam-with-gcloud/lab.md), [Exploring IAM](./src/examples/iam/exploring-iam/lab.md) |
+| Redes | [Configuring VPC](./src/examples/network/configuring-vpc/lab.md), [VPC Controlling Access](./src/examples/network/controlling-access/lab.md), [Multiple VPC](./src/examples/network/multiple-vpc/lab.md), [Build a Secure Network - Challenge](./src/examples/network/build-secure-network-challenge/lab.md), [Analyzing Network Traffic with VPC Flow Logs](./src/examples/network/vpc-flow-logs/lab.md) |
+| Terraform | [Build IaC with Terraform](./src/examples/terraform/build-iac-with-terraform/lab.md), [Automating Infrastructure Deployment With Terraform](./src/examples/terraform/automating-infrastructure-deployment/lab.md) |
+| Monitoreo | [Log Analytics](./src/examples/monitoring-and-alerts/log-analytics/lab.md), [Monitoring a Compute Engine by using Ops Agent](./src/examples/observability/ops-agent-monitoring/lab.md), [Service Monitoring](./src/examples/monitoring-and-alerts/service-monitoring/lab.md), [Alerting in GCP](./src/examples/monitoring-and-alerts/alerting-in-gcp/lab.md), [View application latency with Cloud Trace](./src/examples/observability/cloud-trace/lab.md) |
 
-```
-aws/
-├── book/                    # Carpeta generada con el libro compilado
-├── src/                     # Contenido del curso
-│   ├── SUMMARY.md          # Índice del libro
-│   ├── Clase 1.md          # Introducción a la nube
-│   ├── images/             # Imágenes extraídas de las presentaciones
-│   ├── presentations/      # PDFs originales de las presentaciones
-│   └── examples/           # Ejemplos de código
-├── book.toml               # Configuración de mdBook
-└── README.md               # Este archivo
+## Prácticas Terraform
+
+Las prácticas están agrupadas por tipo de recurso en [`src/examples`](./src/examples/README.md):
+
+| Categoría | Índice |
+|---|---|
+| Cloud Run | [`src/examples/cloud-run`](./src/examples/cloud-run/README.md) |
+| Balanceadores de carga | [`src/examples/load-balancer`](./src/examples/load-balancer/README.md) |
+| Almacenamiento | [`src/examples/storage`](./src/examples/storage/README.md) |
+| IAM | [`src/examples/iam`](./src/examples/iam/README.md) |
+| Redes | [`src/examples/network`](./src/examples/network/README.md) |
+| Terraform | [`src/examples/terraform`](./src/examples/terraform/README.md) |
+| Monitoreo | [`src/examples/monitoring-and-alerts`](./src/examples/monitoring-and-alerts/README.md) |
+
+## Recursos adicionales
+
+- [`Cloud Shell`](./src/Cloud%20Shell.md): uso básico de CLI y herramientas de Google Cloud.
+- [`Notas extra`](./src/Notas%20extra.md): apuntes complementarios.
+- [`docs/INSTALL.md`](./docs/INSTALL.md): instalación de mdBook y preprocesadores.
+
+## Uso local
+
+Para leer el material no necesitás compilar nada: podés abrir los Markdown dentro de `src/`.
+
+Si querés levantar el libro como sitio local:
+
+```bash
+mdbook serve
 ```
 
-## Cómo usar este repositorio
+Después abrí `http://localhost:3000`.
 
-### Para estudiar
+Para preparar el entorno completo, seguí la [guía de instalación](./docs/INSTALL.md).
 
-1. **Visualizar el libro**: Accede al contenido en formato web ejecutando:
-   ```bash
-   mdbook serve
-   ```
-   Luego abre `http://localhost:3000` en tu navegador
+## Estructura del repositorio
 
-2. **Leer offline**: Navega directamente por los archivos `.md` en el directorio `src/`
+```text
+gcp/
+├── book.toml                  # Configuración de mdBook
+├── docs/
+│   └── INSTALL.md             # Guía de instalación local
+├── src/
+│   ├── README.md              # Introducción interna del libro
+│   ├── SUMMARY.md             # Índice del libro
+│   ├── Clase *.md             # Apuntes de clase
+│   ├── Cloud Shell.md         # Recurso adicional
+│   ├── Notas extra.md         # Recurso adicional
+│   └── examples/              # Labs y prácticas Terraform
+├── book/                      # Salida generada por mdBook
+└── README.md                  # Este archivo
+```
 
-3. **Orden recomendado**: Sigue la secuencia de clases para un aprendizaje progresivo
+## Convenciones del material
 
-### Para desarrolladores
-
-- **Requisitos previos**: Instalar mdBook
-  ```bash
-  cargo install mdbook
-  ```
-
-- **Generar el libro**:
-  ```bash
-  mdbook build
-  ```
-
-### Para contribuir
-
-- Si encontrás errores o mejoras, no dudes en crear un issue o pull request
-- Las correcciones y ampliaciones son bienvenidas
-
-## Temas principales
-
-
-## Notas importantes
-
-- Este material contiene las presentaciones del curso transcriptas a formato Markdown
-- El contenido está actualizado con las prácticas y servicios de GCP vigentes en 2026
-- Los PDFs originales se mantienen en `src/presentations/` para referencia
-- Compatible con mdBook para una experiencia de lectura optimizada
+- Los conceptos se explican en español.
+- Los nombres de servicios, comandos y recursos de GCP se mantienen en inglés cuando corresponde.
+- Los labs muestran el camino guiado de aprendizaje.
+- Las prácticas Terraform muestran una implementación reutilizable, no un reemplazo del razonamiento.
+- No hardcodees `project_id`, región, credenciales ni valores sensibles: parametrizá.
 
 ---
 
-**Docentes**: Rodrigo Pazos, Mora Villa Abrille  
-**Materia**: GCP + AI Fundamentals
-**Universidad**: Universidad Austral  
+**Docentes**: Rodrigo Pazos, Mora Villa Abrille<br>
+**Materia**: GCP + AI Fundamentals<br>
+**Universidad**: Universidad Austral<br>
 **Año**: 2026
