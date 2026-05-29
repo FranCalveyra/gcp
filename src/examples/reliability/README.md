@@ -1,6 +1,6 @@
-# CI/CD en GCP
+# Confiabilidad e Infraestructura en GCP
 
-Prácticas Terraform sobre pipelines de integración y entrega continua en Google Cloud.
+Prácticas Terraform del curso "Reliable Google Cloud Infrastructure: Design and Process" (curso 41).
 
 ## Prácticas disponibles
 

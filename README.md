@@ -54,7 +54,7 @@ La secuencia importante es esta: **concepto → lab → Terraform**. No al revé
 | Redes | [Configuring VPC](./src/examples/network/configuring-vpc/lab.md), [VPC Controlling Access](./src/examples/network/controlling-access/lab.md), [Multiple VPC](./src/examples/network/multiple-vpc/lab.md), [Build a Secure Network - Challenge](./src/examples/network/build-secure-network-challenge/lab.md), [Analyzing Network Traffic with VPC Flow Logs](./src/examples/network/vpc-flow-logs/lab.md) |
 | Terraform | [Build IaC with Terraform](./src/examples/terraform/build-iac-with-terraform/lab.md), [Automating Infrastructure Deployment With Terraform](./src/examples/terraform/automating-infrastructure-deployment/lab.md) |
 | Monitoreo | [Log Analytics](./src/examples/monitoring-and-alerts/log-analytics/lab.md), [Monitoring a Compute Engine by using Ops Agent](./src/examples/observability/ops-agent-monitoring/lab.md), [Service Monitoring](./src/examples/monitoring-and-alerts/service-monitoring/lab.md), [Alerting in GCP](./src/examples/monitoring-and-alerts/alerting-in-gcp/lab.md), [View application latency with Cloud Trace](./src/examples/observability/cloud-trace/lab.md) |
-| CI/CD | [Building a DevOps Pipeline](./src/examples/cicd/devops-pipeline/lab.md) |
+| Confiabilidad | [Building a DevOps Pipeline](./src/examples/reliability/devops-pipeline/lab.md) |
 
 ## Prácticas Terraform
 
@@ -69,7 +69,7 @@ Las prácticas están agrupadas por tipo de recurso en [`src/examples`](./src/ex
 | Redes | [`src/examples/network`](./src/examples/network/README.md) |
 | Terraform | [`src/examples/terraform`](./src/examples/terraform/README.md) |
 | Monitoreo | [`src/examples/monitoring-and-alerts`](./src/examples/monitoring-and-alerts/README.md) |
-| CI/CD | [`src/examples/cicd`](./src/examples/cicd/README.md) |
+| Confiabilidad | [`src/examples/reliability`](./src/examples/reliability/README.md) |
 
 ## Recursos adicionales
 

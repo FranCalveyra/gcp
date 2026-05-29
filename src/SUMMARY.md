@@ -41,7 +41,7 @@
 - [Service Monitoring](./examples/monitoring-and-alerts/service-monitoring/lab.md)
 - [Alerting in GCP](./examples/monitoring-and-alerts/alerting-in-gcp/lab.md)
 - [View application latency with Cloud Trace](./examples/observability/cloud-trace/lab.md)
-- [Building a DevOps Pipeline](./examples/cicd/devops-pipeline/lab.md)
+- [Building a DevOps Pipeline](./examples/reliability/devops-pipeline/lab.md)
 
 # Ejemplos
 - [Prácticas Terraform](./examples/README.md)
@@ -75,5 +75,5 @@
 		- [Log Analytics](./examples/monitoring-and-alerts/log-analytics/README.md)
 		- [View application latency with Cloud Trace](./examples/observability/cloud-trace/README.md)
 		- [Monitoring a Compute Engine by using Ops Agent](./examples/observability/ops-agent-monitoring/README.md)
-	- [CI/CD](./examples/cicd/README.md)
-		- [DevOps Pipeline con Cloud Build](./examples/cicd/devops-pipeline/README.md)
+	- [Confiabilidad](./examples/reliability/README.md)
+		- [DevOps Pipeline con Cloud Build](./examples/reliability/devops-pipeline/README.md)
