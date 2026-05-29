@@ -1,12 +1,3 @@
-terraform {
-  required_providers {
-    google = {
-      source  = "hashicorp/google"
-      version = "6.8.0"
-    }
-  }
-}
-
 provider "google" {
   project = var.project_id
   region  = var.region
@@ -92,9 +83,4 @@ resource "google_compute_forwarding_rule" "www_rule" {
   port_range            = tostring(var.http_port)
   ip_address            = google_compute_address.network_lb_ip_1.address
   target                = google_compute_target_pool.www_pool.self_link
-}
-
-output "load_balancer_ip" {
-  description = "External IPv4 address of the Network Load Balancer."
-  value       = google_compute_address.network_lb_ip_1.address
 }

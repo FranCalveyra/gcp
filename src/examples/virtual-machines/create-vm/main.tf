@@ -1,31 +1,22 @@
-terraform {
-  required_providers {
-    google = {
-      source  = "hashicorp/google"
-      version = "6.8.0"
-    }
-  }
-}
-
 provider "google" {
-  project = "<PROJECT_ID>"
+  project = var.project_id
   region  = var.region
   zone    = var.zone
 }
 
 resource "google_compute_instance" "default" {
-  name         = "my-vm"
-  machine_type = "n1-standard-1"
+  name         = var.instance_name
+  machine_type = var.machine_type
   zone         = var.zone
 
   boot_disk {
     initialize_params {
-      image = "ubuntu-minimal-2210-kinetic-amd64-v20230126"
+      image = var.boot_image
     }
   }
 
   network_interface {
-    network = "default"
+    network = var.network_name
     access_config {}
   }
 }
