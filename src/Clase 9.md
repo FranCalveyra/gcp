@@ -1,85 +1,84 @@
 # Observabilidad
-Hay varios servicios que generan logs y alertas por sí solos (y no se pueden apagar), tales como:
-- GKE
-- Cloud Run
-- Cloud Functions
-- [Uno más]
 
->¿Qué ventajas tiene usar Prometheus (o una herramienta open source de monitoreo) y que sea un servicio administrado por GCP sobre usar Cloud Logging?
->
->Si uso la herramienta open-source me la puedo llevar, básicamente
+> Es la capacidad de entender el estado interno de un sistema complejo basándose únicamente en los datos que este genera hacia el exterior.
 
-Los logs generados por [inserte servicios particulares] van a **Cloud Monarch** (ahora llamado Global Data Store).
-- Es un repositorio de logs donde van todos los productos grandes de Google (Gmail, Youtube, etc.)
+Depende de tres tipos de datos:
+- **Métricas**: valores numéricos medidos en el tiempo. Son ideales para detectar anomalías y ver tendencias (CPU, memoria, tasa de errores).
+- **Logs**: registros de eventos discretos.
+- **Traces**: muestran el recorrido de una request a través de todos los componentes del sistema (microservicios, bases de datos, APIs externas).
+
+## Observabilidad en GCP
+
+Varios servicios emiten métricas y logs de forma nativa, sin necesitar configuración adicional: App Engine, GKE, Cloud Run y Cloud Run Functions. Todos mandan sus datos directamente a la **Cloud Logging API** y la **Cloud Monitoring API**.
+
+Para VMs con Compute Engine, en cambio, necesitás instalar el **Ops Agent**.
+
+## Monitoreo en GKE
+
+GKE se integra nativamente con Cloud Logging y Cloud Monitoring. También se puede integrar con **GC Managed Prometheus**:
+- Funciona con un modelo de extracción (pull): scrapea métricas de la aplicación a intervalos regulares (ej: cada 15 segundos).
+- La aplicación expone un endpoint `/metrics` con las métricas en formato Prometheus.
+- Los datos se almacenan en **Cloud Monarch** (el repositorio global de métricas de Google) y se visualizan en Cloud Monitoring.
 
 ## Ops Agent
-Agente unificado de Google Cloud para Compute Engine que combina la recolección de logs y métricas en 1 solo proceso:
-- **Integración Nativa**: scrapea métricas de Prometheus y las envia directo al Global Data Store
-- **Simplicidad Operativa**: no hace falta instalar ni gestionar servidores de Prometheus completos en cada VM.
-	- Básicamente es un servicio consolidado
-	- Puedo tener mi propia implementación, pero Ops Agent me lo da todo unificado.
-- **Service Discovery**: se simplifica dentro del entorno de Compute Engine
-	- Sirve para mappear nuestras soluciones, para saber qué cuerno tengo
-- Tiene soporte oficial para varias distros de Linux y Windows
 
+Agente unificado de Google Cloud para Compute Engine que combina la recolección de logs y métricas en un solo proceso:
+- Hace scraping de métricas de Prometheus y las envía directo al Global Data Store (Monarch). No hace falta instalar servidores de Prometheus completos en cada VM.
+- Simplifica el Service Discovery dentro del entorno de Compute Engine — básicamente te dice qué tenés corriendo.
+- Tiene soporte oficial para las distros de Linux más usadas y Windows.
 
 ## Open Telemetry
-Es un proyecto open source que tiene APIs, SDK y herramientas para recolectar datos de telemetría
-Tiene un _collector_ que orquesta la recolección, procesamiento y exportación de datos
-- **Receivers**: capturan datos en distintos formatos
-- **Processors**: son transformadores, filtros y enriquecedores de datos
-- **Exporters**: envían los datos a uno o más destinos (Datadog, Elastic, New Relic)
 
-### Dentro de GCP
-Se conecta con Cloud Trace, Cloud Monitoring y Managed Prometheus.
+Proyecto open source de la CNCF que da APIs, SDKs y herramientas para recolectar datos de telemetría. La pieza central es el *collector*, que orquesta la recolección, el procesamiento y la exportación:
+- **Receivers**: capturan datos en distintos formatos.
+- **Processors**: transforman, filtran y enriquecen los datos.
+- **Exporters**: envían los datos a uno o más destinos (Datadog, Elastic, New Relic).
 
-## Incorporar métricas propias en Cloud Monitoring
-- GKE apps (Managed Service for Prometheus)
-	- Se expone un endpoint `/metrics` en la aplicación usando librerías de Prometheus
-		- Prometheus se autentica con la cuenta del usuario. El endpoint no es público
-	- El "Managed Service for Prometheus" scrapea automáticamente
-	- Las métricas se guardan en **Monarch**
-	- Voy a usar Prometheus cuando la métrica no es parte del set prefabricado de métricas de Cloud Monitoring. Es decir, cuando quiera hacer una métrica custom
-- Aplicaciones en VMs (Ops Agent)
-	- Se configura el Ops Agent en la instancia de VM
-	- El agente captura las métricas y las envía a la API de Cloud Monitoring
-- Instrumentación Directa (OpenTelemetry SDKs)
-	- Se integra el SDK de OpenTelemetry con código directamente (Java, Go, Python, .NET)
-	- Se envían los datos a un OTel Collector centralizado
+En GCP se conecta con tres servicios:
+- **Cloud Trace**: visualización de latencias en microservicios distribuidos mediante trazas propagadas por OTel.
+- **Cloud Monitoring**: ingesta de métricas personalizadas y del sistema mediante Monarch.
+- **Managed Prometheus**: colección de métricas compatibles con Prometheus usando el collector de OpenTelemetry.
+
+## Incorporar métricas propias a Cloud Monitoring
+
+Dependiendo de dónde corra la aplicación, el camino es distinto:
+
+- **GKE (Managed Service for Prometheus)**: exponés un endpoint `/metrics` con librerías estándar de Prometheus. El Managed Service hace el scraping automático, almacena en Monarch y visualizás en Cloud Monitoring. Lo usás cuando la métrica no es parte del set prefabricado de Cloud Monitoring — es decir, cuando necesitás una métrica custom.
+- **VMs (Ops Agent)**: configurás el agente en la instancia, él captura las métricas y las manda a la API de Cloud Monitoring.
+- **Instrumentación directa (OpenTelemetry SDKs)**: integrás el SDK de OTel en el código (Java, Go, Python, .NET) y enviás los datos a un OTel Collector centralizado.
 
 ## Monitoreo de red
-Cuando yo monitoreo la red en una red instalada por mí, lo hago a nivel del dispositivo de comunicaciones.
+
+Cuando monitoreás la red de GCP, no lo hacés a nivel del dispositivo físico — lo hacés a nivel de la interfaz de red de cada VM.
+
 ### VPC Flow Logs
-Es el registro de llamadas de la red. Captura los metadatos de las conexiones. Se basa en 5 elementos clave:
-- IP de origen
-- IP de destino
-- Puerto de origen
-- Puerto de destino
+
+Registran los metadatos de las conexiones de red. Se basan en 5 elementos clave (el "5-tuple"):
+- IP de origen y destino
+- Puerto de origen y destino
 - Protocolo
 
-En este caso, monitoreo los metadatos de todas las conexiones a la interfaz de red de una subred.
-- Se habilita por subred por separado
-- Se configura:
-	- Intervalo de agregación (o de guardado)
-	- Tasa de muestreo
-	- Metadatos (ID de la VM, ID del endpoint)
+Los logs se capturan **dentro de la interfaz de red de la VM**, no en el cable físico ni en el router central. Esto tiene una implicancia importante:
+- **Tráfico saliente (Egress)**: si una regla de firewall bloquea la salida de una VM, el log sí registra el intento.
+- **Tráfico entrante (Ingress)**: si una regla de firewall bloquea un paquete que viene de afuera, **no queda registrado** en el log.
 
-Los logs se capturan dentro de la interfaz de red de la VM, no en el cable físico o en el router central
-
-Se registra el tráfico individual de cada máquina:
-- Tráfico Saliente: una regla de Firewall que bloquea la salida de una VM
-- Tráfico Entrante: una regla de Firewall que bloquea la entrada a una VM
-
-Nos conviene activar logs de Firewall regla por regla.
-
+Se habilitan por subred y se puede configurar el intervalo de agregación, la tasa de muestreo y qué metadatos incluir (ID de la VM, ID del endpoint). Ver [formato completo del registro](https://docs.cloud.google.com/vpc/docs/flow-logs#record_format).
 
 ### Logs del firewall
-[Inserte contenido]
-La solución para identificar el tráfico entrante que no está llegando requiere tanto del logs de trafico saliente como del entrante
 
-Otro approach es permitir el tráfico que busco con una prioridad muy alta
+Los logs de firewall **no están activos por defecto** — hay que editar cada regla para incluirla en los logs.
+
+Cada registro tiene:
+- `action`: Allow o Deny.
+- `rule_details`: el nombre de la regla que se aplicó.
+- `connection`: IP de origen, puerto de destino y protocolo.
+- `disposition`: indica si la regla es de prioridad más alta o si se aplicó por defecto.
+
+La diferencia entre los dos tipos de log es clara: el **Firewall Log** te dice qué regla actuó. El **VPC Flow Log** te da la estadística del tráfico (bytes, paquetes).
 
 ### Logs de load balancers
-- ALB (Application Load Balancers): registra status code de HTTP, URLs exactas y latencias de respuesta. Permiten ver exactamente qué experimentó el usuario final en su navegador
-- NLB (Network LB): se centran en conectividad pura, solo registran flujos de paquetes, IPs y puertos
-- Proxy Load Balancers: detallan la terminiación de la conexión del cliente y el inicio de la conexión al backend. Ayudan en el diagnóstico de problemas de negociación SSL/TLS o protocolos TCP específicos.
+
+Cada tipo de balanceador registra cosas distintas:
+- **Application Load Balancers**: status codes HTTP, URLs exactas y latencias. Permiten ver exactamente qué experimentó el usuario final en el navegador.
+- **Network Load Balancers**: conectividad pura — flujos de paquetes, IPs y puertos.
+- **Proxy Load Balancers**: terminación de la conexión del cliente e inicio de la conexión al backend. Útiles para diagnosticar problemas de negociación SSL/TLS.

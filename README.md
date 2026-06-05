@@ -55,6 +55,8 @@ La secuencia importante es esta: **concepto → lab → Terraform**. No al revé
 | Terraform | [Build IaC with Terraform](./src/examples/terraform/build-iac-with-terraform/lab.md), [Automating Infrastructure Deployment With Terraform](./src/examples/terraform/automating-infrastructure-deployment/lab.md) |
 | Monitoreo | [Log Analytics](./src/examples/monitoring-and-alerts/log-analytics/lab.md), [Monitoring a Compute Engine by using Ops Agent](./src/examples/observability/ops-agent-monitoring/lab.md), [Service Monitoring](./src/examples/monitoring-and-alerts/service-monitoring/lab.md), [Alerting in GCP](./src/examples/monitoring-and-alerts/alerting-in-gcp/lab.md), [View application latency with Cloud Trace](./src/examples/observability/cloud-trace/lab.md) |
 | Confiabilidad | [Building a DevOps Pipeline](./src/examples/reliability/devops-pipeline/lab.md) |
+| BigQuery | [Loading Data into BigQuery](./src/examples/bigquery/loading-data/lab.md) |
+| Vertex AI | [Get Started with Vertex AI Studio](./src/examples/vertex-ai/get-started-with-studio/lab.md) |
 
 ## Prácticas Terraform
 
@@ -70,6 +72,8 @@ Las prácticas están agrupadas por tipo de recurso en [`src/examples`](./src/ex
 | Terraform | [`src/examples/terraform`](./src/examples/terraform/README.md) |
 | Monitoreo | [`src/examples/monitoring-and-alerts`](./src/examples/monitoring-and-alerts/README.md) |
 | Confiabilidad | [`src/examples/reliability`](./src/examples/reliability/README.md) |
+| BigQuery | [`src/examples/bigquery`](./src/examples/bigquery/README.md) |
+| Vertex AI | [`src/examples/vertex-ai`](./src/examples/vertex-ai/README.md) |
 
 ## Recursos adicionales
 

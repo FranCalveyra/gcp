@@ -14,6 +14,7 @@
 - [Monitoreo y Alertas](./Clase%208.md)
 - [Observabilidad](./Clase%209.md)
 - [Reliability](./Clase%2010.md)
+- [AI y BigQuery](./Clase%2011.md)
 
 # Recursos Adicionales
 - [CLI](./Cloud%20Shell.md)
@@ -85,3 +86,9 @@
 - [CI/CD](./examples/cicd/README.md)
 	- [Building a DevOps Pipeline](./examples/cicd/devops-pipeline/README.md)
 		- [Lab original](./examples/cicd/devops-pipeline/lab.md)
+- [BigQuery](./examples/bigquery/README.md)
+	- [Loading Data into BigQuery](./examples/bigquery/loading-data/README.md)
+		- [Lab original](./examples/bigquery/loading-data/lab.md)
+- [Vertex AI](./examples/vertex-ai/README.md)
+	- [Get Started with Vertex AI Studio](./examples/vertex-ai/get-started-with-studio/README.md)
+		- [Lab original](./examples/vertex-ai/get-started-with-studio/lab.md)
