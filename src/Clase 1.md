@@ -5,7 +5,6 @@
 	- Por el SLA que firmó GCP, en cada región tiene que haber al menos 3 data centers para los servicios ofrecidos: 1 para ofrecer el servicio y 2 de respaldo/réplica
 - Las **zonas** representan un data center concreto; no son todas iguales.
 	- Difieren a nivel acceso y a nivel latencia
-	- [Completar]
 - Existe lo que se llaman **Points of Presence** (PoP), que son lugares donde ya hay datos guardados para poder distribuirlos mejor.
 - _No todos los servidores son iguales_: el costo de mantenimiento claramente difiere según la zona geográfica.
 	- Por lo general, EE.UU es mucho más barato; hasta 10 veces menos que Brasil

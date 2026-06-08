@@ -9,22 +9,36 @@
 
 - Alternativa de GCP a EC2 de Amazon o las VM de Azure
 - Ofrece máquinas virtuales completamente configurables, con SLAs y precios acordes al mercado
-- Se organizan en familias, series y tipos concretos para que sea lo ma2s fácil posible elegir la configuración que se adapte a nuestras necesidades
+- Se organizan en familias, series y tipos concretos para que sea lo más fácil posible elegir la configuración que se adapte a nuestras necesidades
 	- Una E2-medium es un *tipo concreto*
 	- La familia es *General-Purpose*
 
 
 ### Familias
-[Insertar cuadro]
+![Familias](./images/Clase%202/compute_engine_families.png)
 
 - **Storage-optimized**: la uso para workloads pesados de almacenamiento
-	- Guardado de 
+	- Guardado de datos para streaming
+	- Bases de datos (SQL, NoSQL y vectoriales)
+	- _Data warehouses_ (almacenes con grandes volúmenes de datos organizados)
 - **Memory-optimized**: hasta 12TB de RAM. La uso para trabajos pesados en memoria
+  - Simulaciones
+  - Bases de datos de alta performance (SQL Server, MySQL)
+  - Data stores en memoria (ej: <img src="https://skillicons.dev/icons?i=redis" height="35" width="40"> )
 - **Compute-optimized**: tienen un CPU característico y potente. La uso para trabajos de procesamiento pesados.
+  - Servers para juegos
+  - Sistemas de salud
+  - Sistemas meteorológicos
 - **Accelerator-optimized**: tengo acceso a GPUs de todo tipo.
 	- Un uso actual muy latente es AI/ML
 - **General-purpose**: te dan buen valor por lo que estás pagando, pero no les pidas mucho
 	- No son para grandes servidores. Sirven para "iniciar" un negocio
+	- Dentro de las General Purpose hay distintas categorías con distinto propósito y optimizaciones particulares:
+    	- Familia de las N: relación precio-performance bastante alta
+        	- Microservicios containerizados
+        	- Escritorios virtuales
+        	- _Batch processing_
+        	- 
 
 ### Preguntas
 - Diferencias entre N2 y N4, y para qué elegimos c/u
@@ -56,7 +70,7 @@
 	- Se usa bastante para procesos que pueden persistir el estado
 - **Flex-start**: la inversa de Spot, "se levanta cuando puede". Tiene un tiempo máximo de 2hs para levantar el recurso. Es bastante más barata que las estándar.
 	- Tenés control sobre la máquina.
-	- Suele ser trabajo de batch-processing, porque podés albergar la máquina por un máximo de 7 días
+	- Suele ser para trabajo de batch-processing, porque podés albergar la máquina por un máximo de 7 días
 - **Reservation-bound**: es para cuando vos sabés que vas a tener un workload por un tiempo prolongado, entonces lo reservás con antelación.
 
 > No todas las máquinas pueden acceder a todos los modelos de provisioning
@@ -67,7 +81,7 @@ Son análogos a los grupos de Auto-Scaling de AWS. Escalás horizontalmente en f
 - Ante cierto $\%$ de uso de CPU o de memoria, levanto una nueva instancia.
 - Se define un mínimo y un máximo de máquinas a tener en el MIG
 
-Son $N$ máquinas virtuales administradas como un conjunto, siendo todas idénticas. Ofrece:
+Son $N$ máquinas virtuales **exactamente iguales** administradas como un conjunto, siendo todas idénticas. Ofrece:
 - **Alta disponibilidad**: nos ofrece `automatic repairs` basados en la salud de la VM y en la salud de la aplicación. Además, nos da soporte regional para el deployment de las VMs, de forma de que si falla una zona, nuestro servicio sigue funcionando. Con esta estructura podemos usar un _load balancer_ y distribuir la demanda.
 - **Escalabilidad automática**: ante ciertos escenarios, el sistema puede levantar instancias nuevas para responder a picos de demanda
 - **Automatic Updates**: podemos hacer `rollouts` de diferentes versiones de nuestra aplicación

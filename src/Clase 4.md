@@ -2,6 +2,9 @@
 
 > **Aclaración respecto del Lab**: una Service Account es una cuenta de un usuario artificial que tiene permisos para realizar operaciones de manera automática sobre los distintos recursos de GCP. Operan como un *proceso aparte*.
 
+
+> Qué es un dato? $\Longrightarrow$ una representación de información que puede ser almacenada, procesada y transmitida por un sistema.
+
 Google ofrece una cantidad muy amplia de soluciones de almacenamiento en la nube, pero nos vamos a enfocar en 3 particulares:
 - Cloud Storage
 - Cloud SQL
@@ -28,7 +31,7 @@ Está construido sobre Colossus, sucesor de GFS, permitiendo capacidad infinita.
 Por el cliente, yo interactúo con la metadata del archivo, no con el archivo en sí. El Blob es todo lo que conoce
 
 ### Pricing
-[Insertar foto]
+![Bucket Pricing](./images/Clase%204/Bucket%20Pricing.png)
 - Region no te cobra el `outbound data transfer` porque lees datos dentro de la misma región.
 - Multi-región es más caro que región, pero más barato que dual-region, porque Google no te deja elegir dónde guardarlo
 	- Justamente por esto es que tanto acá como en dual-region te cobran por `outbound data transfer`, porque te movés afuera de la región
@@ -37,7 +40,7 @@ Por el cliente, yo interactúo con la metadata del archivo, no con el archivo en
 	- Este es el más caro justamente por esto.
 
 ### Tipos de buckets
-- **Rapid buckets**: el zonal, funciona a los piques. Se usa para AI/ML, análisis de datos, etc.
+- **Rapid storage**: el zonal, funciona a los piques. Se usa para AI/ML, análisis de datos, etc.
 - **Standard storage**: es ideal para lectura frecuente de un conjunto de archivos.
 - **Nearline, Coldline, Storage**: en este orden, el costo de almacenamiento es cada vez más barato
 	- El costo de escritura es caro de manera creciente, según el orden anterior

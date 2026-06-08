@@ -13,3 +13,5 @@ renderers = ["html"]
 
 [output.html]
 additional-js = ["mermaid-init.js", "set-favicon.js"]
+additional-css = ["theme/google-style.css"]
+default-theme = "light"
