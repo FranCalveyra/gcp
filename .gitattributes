@@ -1,0 +1,4 @@
+*.js linguist-vendored
+*.jsx linguist-vendored
+*.mjs linguist-vendored
+*.cjs linguist-vendored
